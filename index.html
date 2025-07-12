@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Media Ltd - Premier Corporate Photography & Videography Services in Nairobi, Kenya</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ultimate Media Ltd - Professional corporate photography, videography, drone services, livestreaming, and documentary production in Nairobi, Kenya. Trusted by NCA, Kenya Airways, and leading organizations.">
+    <meta name="keywords" content="corporate photography Nairobi, videography Kenya, drone services, livestreaming, documentary production, aerial photography, corporate events, Kenya media company">
+    <meta name="author" content="Ultimate Media Ltd">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Ultimate Media Ltd - Premier Media Production in Nairobi">
+    <meta property="og:description" content="Capture Excellence. Deliver Impact. Professional photography and videography services for corporates and events in Kenya.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ultimatemedia.co.ke">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Ultimate Media Ltd",
+        "url": "https://ultimatemedia.co.ke",
+        "telephone": "+254777122800",
+        "email": "info@ultimatemedia.co.ke",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Nairobi",
+            "addressCountry": "Kenya"
+        },
+        "foundingDate": "2014-12-19",
+        "description": "Premier media production company specializing in corporate photography, videography, and drone services."
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F9FAFB;
+            color: #1F2937;
+        }
+        
+        .section-container {
+            background: #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            border-radius: 12px;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #3B82F6 100%);
+        }
+        
+        .hero-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .section-divider {
+            border-top: 2px solid #E5E7EB;
+            margin: 3rem 0;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .client-logo {
+            transition: all 0.3s ease;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+        }
+        
+        .client-logo:hover {
+            border-color: #3B82F6;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+        }
+        
+        .stats-counter {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #2563EB;
+        }
+        
+        .pulse-glow {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6); }
+            70% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+        }
+        .propeller-animation {
+    position: relative;
+}
+.drone-overlay {
+    position: relative;
+}
+.drone-overlay::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('images/drone-silhouette.png'); /* Placeholder path */
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-4 border-gray-200 border-t-blue-600 mx-auto mb-4"></div>
+            <div class="flex items-center justify-center space-x-2 mb-3">
+                <img src="images/logo.png" alt="Ultimate Media Logo" class="h-8">
+                <h2 class="text-2xl font-semibold text-gray-800">Ultimate Media Ltd</h2>
+            </div>
+            <p class="text-gray-500 font-medium">Crafting Your Story...</p>
+        </div>
+    </div>
+
+<nav class="fixed w-full top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+            <div class="flex items-center space-x-3">
+                <img src="images/logo.png" alt="Ultimate Media Logo" class="h-9">
+                <div>
+                    <h1 class="text-lg font-semibold text-gray-800">Ultimate Media Ltd</h1>
+                    <p class="text-xs text-gray-500">Est. 2014</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">About</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Services</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Portfolio</a>
+                <a href="#clients" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Clients</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                <a href="/login" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors pulse-glow">Sign In</a>
+                <a href="/login" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors pulse-glow">Log In</a>
+            </div>
+            <button class="md:hidden text-gray-600" id="mobile-menu-btn">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    <div class="md:hidden bg-white shadow-md" id="mobile-menu" style="display: none;">
+        <div class="px-4 py-3 space-y-2">
+            <a href="#home" class="block py-2 text-gray-600 hover:text-blue-600">Home</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
+            <a href="#services" class="block py-2 text-gray-600 hover:text-blue-600">Services</a>
+            <a href="#portfolio" class="block py-2 text-gray-600 hover:text-blue-600">Portfolio</a>
+            <a href="#clients" class="block py-2 text-gray-600 hover:text-blue-600">Clients</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-blue-600">Contact</a>
+            <a href="/login" class="block py-2 text-gray-600 hover:text-blue-600">Sign In</a>
+            <a href="/login" class="block py-2 text-gray-600 hover:text-blue-600">Log In</a>
+        </div>
+    </div>
+</nav>
+<!-- Test Font Awesome (remove after testing) -->
+
+    <!-- Hero Section -->
+    <section id="home" class="section-container hero-bg text-white min-h-[80vh] flex items-center justify-center pt-20">
+        <div class="relative z-10 text-center px-4 max-w-6xl mx-auto py-16">
+            <div class="hero-animation" data-aos="fade-up" data-aos-duration="800">
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
+                    Elevate Your Brand with<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200">ULTIMATE MEDIA LIMITED</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                    Nairobi's trusted partner for professional photography, videography, and creative content since 2014.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12" data-aos="fade-up" data-aos-delay="200">
+                <a href="/login"class="relative bg-white text-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                    <span class="flex items-center">
+                        <i class="fas fa-quote-left mr-2"></i>Get Free Quote
+                    </span>
+                </a>
+                <a href="#portfolio" class="relative border-2 border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white/10 hover:text-gray-100 transition-all duration-300 transform hover:scale-105">
+                    <span class="flex items-center">
+                        <i class="fas fa-play mr-2"></i>View Portfolio
+                    </span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-center p-6 rounded-lg bg-white/10 backdrop-blur-sm shadow-md">
+                    <div class="stats-counter text-white text-3xl font-bold mb-2" data-count="500">0</div>
+                    <p class="text-gray-200 font-medium">Projects Completed</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-white/10 backdrop-blur-sm shadow-md">
+                    <div class="stats-counter text-white text-3xl font-bold mb-2" data-count="100">0</div>
+                    <p class="text-gray-200 font-medium">Satisfied Clients</p>
+                </div>
+                <div class="text-center p-6 rounded-lg bg-white/10 backdrop-blur-sm shadow-md">
+                    <div class="stats-counter text-white text-3xl font-bold mb-2" data-count="9">0</div>
+                    <p class="text-gray-200 font-medium">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+<!-- About Section -->
+<section id="about" class="section-container py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">About Ultimate Media Ltd</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Since 2014, we've been Kenya's premier media production company, delivering exceptional photography, videography, and creative content solutions.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div data-aos="fade-right">
+                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Our Story</h3>
+                <p class="text-gray-600 mb-4">
+                    Founded in 2014, Ultimate Media Ltd has grown to become one of Kenya's most trusted media production companies. We specialize in corporate photography, videography, drone services, and live streaming solutions.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    Our team of experienced professionals has worked with leading organizations including NCA, Kenya Airways, and the National Assembly, delivering high-quality content that tells compelling stories.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600">500+</div>
+                        <div class="text-sm text-gray-500">Projects</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600">100+</div>
+                        <div class="text-sm text-gray-500">Clients</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600">9+</div>
+                        <div class="text-sm text-gray-500">Years</div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left">
+                <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg p-8 text-white text-center">
+                    <i class="fas fa-award text-4xl mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Award-Winning Excellence</h4>
+                    <p class="text-blue-100">Recognized for outstanding media production and client satisfaction across Kenya.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Services Section -->
+    <section id="services" class="section-container py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Premium Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Tailored media solutions to amplify your brand's impact
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-camera text-red-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Corporate Photography</h3>
+                    <p class="text-gray-600 mb-4">Capture your business essence with high-quality, professional photography.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Executive Portraits</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Corporate Events</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Product Photography</li>
+                    </ul>
+                    <a href="/login" class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        Get Quote <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="service-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-video text-purple-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Corporate Videography</h3>
+                    <p class="text-gray-600 mb-4">Engaging video content for corporate films, promotions, and events.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Corporate Films</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Training Videos</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Event Coverage</li>
+                    </ul>
+                    <a href="/login" class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        Get Quote <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="service-card p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-teal-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-broadcast-tower text-teal-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Live Streaming</h3>
+                    <p class="text-gray-600 mb-4">Seamless live streaming for global audiences with professional quality.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Multi-Camera Setup</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>HD Quality</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Interactive Features</li>
+                    </ul>
+                    <a href="/login"class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        Get Quote <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+<div class="service-card p-6" data-aos="fade-up" data-aos-delay="400">
+    <div class="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 drone-overlay">
+        <i class="fas fa-drone text-orange-600 text-lg"></i>
+    </div>
+    <h3 class="text-xl font-semibold text-gray-900 mb-3">Aerial Photography</h3>
+    <p class="text-gray-600 mb-4">Cinematic drone footage for stunning aerial perspectives.</p>
+    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+        <li><i class="fas fa-check text-green-600 mr-2"></i>4K Drone Footage</li>
+        <li><i class="fas fa-check text-green-600 mr-2"></i>Licensed Pilots</li>
+        <li><i class="fas fa-check text-green-600 mr-2"></i>Safety Certified</li>
+    </ul>
+    <a href="/login" class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
+        Get Quote <i class="fas fa-arrow-right ml-1"></i>
+    </a>
+</div>
+                <div class="service-card p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-pink-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-film text-pink-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Documentary Production</h3>
+                    <p class="text-gray-600 mb-4">Compelling documentaries that tell your story with impact.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Research & Planning</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Professional Editing</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Distribution Ready</li>
+                    </ul>
+                    <a href="/login" class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        Get Quote <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="service-card p-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-yellow-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bullhorn text-yellow-600 text-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Promotional Content</h3>
+                    <p class="text-gray-600 mb-4">Creative videos to showcase your brand and achievements.</p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-4">
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Script Writing</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Voice-over Services</li>
+                        <li><i class="fas fa-check text-green-600 mr-2"></i>Social Media Ready</li>
+                    </ul>
+                    <a href="/login" class="text-blue-600 font-medium hover:text-blue-700 transition-colors">
+                        Get Quote <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-container py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Portfolio</h2>
+                <p class="text-lg text-gray-600">Discover our creative excellence through visual storytelling</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gradient-to-br from-teal-500 to-teal-700 h-56 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-play-circle text-4xl mb-3"></i>
+                            <h3 class="text-lg font-semibold">Corporate Events</h3>
+                            <p class="text-sm text-gray-200">Professional Coverage</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                        <button class="bg-white text-gray-900 px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                            View Project
+                        </button>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-700 h-56 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-drone text-4xl mb-3"></i>
+                            <h3 class="text-lg font-semibold">Aerial Showcase</h3>
+                            <p class="text-sm text-gray-200">Drone Cinematography</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                        <button class="bg-white text-gray-900 px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                            View Project
+                        </button>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gradient-to-br from-indigo-500 to-indigo-700 h-56 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <i class="fas fa-film text-4xl mb-3"></i>
+                            <h3 class="text-lg font-semibold">Documentary</h3>
+                            <p class="text-sm text-gray-200">Compelling Stories</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                        <button class="bg-white text-gray-900 px-4 py-2 rounded-md font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                            View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10" data-aos="fade-up">
+                <a href="portfolio.html" class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors">
+                    View Full Portfolio <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Clients Section -->
+    <section id="clients" class="section-container py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Trusted by Industry Leaders</h2>
+                <p class="text-lg text-gray-600">Partnering with Kenya's top organizations</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4 mb-12">
+                <a href="#" class="client-logo p-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <img src="/images/nca.png" alt="National Construction Authority Logo" class="h-12 w-12 object-contain mb-2">
+                        <div class="text-center">
+                            <div class="font-medium text-gray-700">NCA</div>
+                            <p class="text-xs text-gray-500">National Construction Authority</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="client-logo p-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <img src="/images/kfs.jpeg" alt="Kenya Forest Service Logo" class="h-12 w-12 object-contain mb-2">
+                        <div class="text-center">
+                            <div class="font-medium text-gray-700">KFS</div>
+                            <p class="text-xs text-gray-500">Kenya Forest Service</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="client-logo p-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <img src="/images/nkcc.jpg" alt="New Kenya Co-operative Logo" class="h-12 w-12 object-contain mb-2">
+                        <div class="text-center">
+                            <div class="font-medium text-gray-700">NKCC</div>
+                            <p class="text-xs text-gray-500">New Kenya Co-operative</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="client-logo p-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <img src="/images/kippra.png" alt="KIPPRA Logo" class="h-12 w-12 object-contain mb-2">
+                        <div class="text-center">
+                            <div class="font-medium text-gray-700">KIPPRA</div>
+                            <p class="text-xs text-gray-500">Policy Research</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="client-logo p-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <img src="/images/parliament.jpeg" alt="National Assembly Logo" class="h-12 w-12 object-contain mb-2">
+                        <div class="text-center">
+                            <div class="font-medium text-gray-700">Parliament</div>
+                            <p class="text-xs text-gray-500">National Assembly</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="client-logo p-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <img src="/images/kq.png" alt="Kenya Airways Logo" class="h-12 w-12 object-contain mb-2">
+                        <div class="text-center">
+                            <div class="font-medium text-gray-700">KQ</div>
+                            <p class="text-xs text-gray-500">Kenya Airways</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="client-logo p-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="flex flex-col items-center justify-center h-full">
+                        <img src="/images/kenya re.png" alt="Kenya Re Logo" class="h-12 w-12 object-contain mb-2">
+                        <div class="text-center">
+                            <div class="font-medium text-gray-700">Kenya Re</div>
+                            <p class="text-xs text-gray-500">Reinsurance Corp</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="bg-blue-600 rounded-lg p-6 text-white text-center" data-aos="fade-up">
+                <div class="max-w-3xl mx-auto">
+                    <i class="fas fa-quote-left text-3xl text-blue-200 mb-4"></i>
+                    <blockquote class="text-xl font-light mb-6">
+                        "Ultimate Media's professionalism and creativity transformed our corporate narrative into compelling visuals that resonated with our audience."
+                    </blockquote>
+                    <div class="flex items-center justify-center space-x-3">
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-semibold">Corporate Client</p>
+                            <p class="text-blue-200 text-sm">Leading Organization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Quote Form Section -->
+    <section id="quote-form" class="section-container py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Request a Quote</h2>
+                <p class="text-lg text-gray-600">Sign in to receive a tailored quote for your project</p>
+            </div>
+            <div class="flex justify-center">
+                <a href="/login" class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors">
+                    Sign In to Get Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-container py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Let's Collaborate</h2>
+                <p class="text-lg text-gray-600">Contact us to bring your vision to life</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1" data-aos="fade-right">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 p-2 rounded-md">
+                                <i class="fas fa-phone text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2">Call Us</h3>
+                                <p class="text-gray-600">+254 777 122 800</p>
+                                <p class="text-gray-600">+254 720 121 711</p>
+                                <p class="text-sm text-gray-500">Available 24/7</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 p-2 rounded-md">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2">Email Us</h3>
+                                <p class="text-gray-600">info@ultimatemedia.co.ke</p>
+                                <p class="text-sm text-gray-500">Response within 2 hours</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-blue-100 p-2 rounded-md">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 mb-2">Visit Us</h3>
+                                <p class="text-gray-600">Nairobi, Kenya</p>
+                                <p class="text-sm text-gray-500">Serving all of Kenya</p>
+                            </div>
+                        </div>
+                        <div class="pt-4">
+                            <h3 class="font-semibold text-gray-900 mb-3">Follow Us</h3>
+                            <div class="flex space-x-3">
+                                <a href="#" class="bg-[#3b5998] text-white p-2 rounded-md hover:bg-[#2a4373] transition-colors">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="bg-gradient-to-r from-[#833ab4] to-[#fd1d1d] text-white p-2 rounded-md hover:opacity-90 transition-colors">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="bg-[#ff0000] text-white p-2 rounded-md hover:bg-[#cc0000] transition-colors">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="#" class="bg-[#00a0dc] text-white p-2 rounded-md hover:bg-[#0087b4] transition-colors">
+                                    <i class="fab fa-vimeo-v"></i>
+                                </a>
+                                <a href="#" class="bg-[#25d366] text-white p-2 rounded-md hover:bg-[#1eab54] transition-colors">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-2" data-aos="fade-left">
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Send Us a Message</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                    <input type="text" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <input type="text" name="subject" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea rows="5" name="message" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700 transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="images/logo.png" alt="Ultimate Media Logo" class="h-8">
+                        <div>
+                            <h1 class="text-lg font-semibold text-white">Ultimate Media Ltd</h1>
+                            <p class="text-sm text-gray-400">Est. 2014 • Capture Excellence</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Kenya's leading media production company, delivering professional photography, videography, and creative content solutions.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="bg-[#3b5998] text-white p-2 rounded-md hover:bg-[#2a4373] transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gradient-to-r from-[#833ab4] to-[#fd1d1d] text-white p-2 rounded-md hover:opacity-90 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-[#ff0000] text-white p-2 rounded-md hover:bg-[#cc0000] transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="bg-[#00a0dc] text-white p-2 rounded-md hover:bg-[#0087b4] transition-colors">
+                            <i class="fab fa-vimeo-v"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-base font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-blue-400 transition-colors">Portfolio</a></li>
+                        <li><a href="#clients" class="text-gray-400 hover:text-blue-400 transition-colors">Clients</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-base font-semibold text-white mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Corporate Photography</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Videography</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Live Streaming</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Aerial Photography</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Documentary Production</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Ultimate Media Ltd. All rights reserved.
+                    </p>
+                    <div class="flex space-x-4 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 text-sm transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-md hover:bg-blue-700 transition-all duration-300 transform scale-0">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('loading-screen').style.opacity = '0';
+                setTimeout(function () {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 300);
+            }, 1000);
+        });
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function () {
+            mobileMenu.style.display = mobileMenu.style.display === 'none' || mobileMenu.style.display === '' ? 'block' : 'none';
+            mobileMenuBtn.innerHTML = mobileMenu.style.display === 'block' ? '<i class="fas fa-times text-xl"></i>' : '<i class="fas fa-bars text-xl"></i>';
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                mobileMenu.style.display = 'none';
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+            });
+        });
+
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-md');
+                backToTop.classList.remove('scale-0');
+            } else {
+                navbar.classList.remove('shadow-md');
+                backToTop.classList.add('scale-0');
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function () {
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + '+';
+            }, 20);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.stats-counter').forEach(counter => {
+                        animateCounter(counter, parseInt(counter.getAttribute('data-count')));
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5, rootMargin: '0px 0px -100px 0px' });
+
+        document.getElementById('home') && observer.observe(document.getElementById('home'));
+
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            const form = this;
+            const name = form.querySelector('input[name="name"]').value.trim();
+            const email = form.querySelector('input[name="email"]').value.trim();
+            const subject = form.querySelector('input[name="subject"]').value.trim();
+            const message = form.querySelector('textarea[name="message"]').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+            submitBtn.disabled = true;
+
+            fetch('http://localhost:3001/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, subject, message })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    form.reset();
+                    submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message Sent!';
+                    submitBtn.classList.replace('bg-blue-600', 'bg-green-600');
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md mt-4';
+                    successMessage.innerHTML = `
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-green-600 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Success!</p>
+                                <p>Your message has been sent. We'll respond within 2 hours to ${email}.</p>
+                            </div>
+                        </div>
+                    `;
+                    form.appendChild(successMessage);
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.classList.replace('bg-green-600', 'bg-blue-600');
+                        submitBtn.disabled = false;
+                        form.removeChild(successMessage);
+                    }, 3000);
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Something went wrong.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>

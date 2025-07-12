@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - Ultimate Media</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.0/supabase.min.js"></script>
+
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .service-card {
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .service-card.selected {
+            border-color: #667eea;
+            background-color: #f0f4ff;
+        }
+        .equipment-card {
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .equipment-card.selected {
+            border-color: #10b981;
+            background-color: #f0fdf4;
+        }
+        .price-display {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+        }
+        .loading {
+            display: none;
+        }
+        .loading.show {
+            display: flex;
+        }
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="gradient-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-white text-xl font-bold">Ultimate Media</h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-white" id="userWelcome">Welcome, User</span>
+                    <button onclick="logout()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition-colors">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Tab Navigation -->
+        <div class="flex space-x-1 bg-gray-200 rounded-lg p-1 mb-8">
+            <button onclick="showTab('new-booking')" class="nav-link flex-1 py-2 px-4 text-center rounded-md text-gray-700 font-medium transition-colors" id="new-booking-tab">
+                <i class="fas fa-plus mr-2"></i>New Booking
+            </button>
+            <button onclick="showTab('my-bookings')" class="nav-link flex-1 py-2 px-4 text-center rounded-md text-gray-700 font-medium transition-colors" id="my-bookings-tab">
+                <i class="fas fa-list mr-2"></i>My Bookings
+            </button>
+            <button onclick="showTab('invoices')" class="nav-link flex-1 py-2 px-4 text-center rounded-md text-gray-700 font-medium transition-colors" id="invoices-tab">
+                <i class="fas fa-file-invoice mr-2"></i>Invoices
+            </button>
+        </div>
+
+        <!-- New Booking Tab -->
+        <div id="new-booking" class="tab-content">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                    <i class="fas fa-camera text-blue-600 mr-3"></i>Book Our Services
+                </h2>
+
+                <!-- Event Details Form -->
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Event Date</label>
+                        <input type="date" id="eventDate" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Event Location</label>
+                        <input type="text" id="eventLocation" placeholder="Enter event location" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Distance from Roysambu (KM)</label>
+                        <input type="number" id="distanceKm" placeholder="Enter distance in kilometers" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" min="0" value="0">
+                        <p class="text-sm text-gray-500 mt-1">Transport cost: KES 50 per KM from our base in Roysambu</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
+                        <textarea id="additionalNotes" placeholder="Any special requirements or notes" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Services Selection -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        <i class="fas fa-video text-purple-600 mr-2"></i>Select Services
+                    </h3>
+                    <div id="servicesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Services will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Equipment Options -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        <i class="fas fa-camera text-green-600 mr-2"></i>Camera & Equipment Options
+                    </h3>
+                    <div id="equipmentGrid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <!-- Equipment options will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Price Summary -->
+                <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                        <i class="fas fa-calculator text-yellow-600 mr-2"></i>Price Summary
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span>Services Subtotal:</span>
+                            <span id="servicesSubtotal">KES 0.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Equipment Cost:</span>
+                            <span id="equipmentCost">KES 0.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Transport Cost:</span>
+                            <span id="transportCost">KES 0.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Base Amount:</span>
+                            <span id="baseAmount">KES 0.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>VAT (16%):</span>
+                            <span id="vatAmount">KES 0.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-600">
+                            <span>Levy (0.03%):</span>
+                            <span id="levyAmount">KES 0.00</span>
+                        </div>
+                        <hr class="border-gray-300">
+                        <div class="flex justify-between text-xl font-bold text-green-600">
+                            <span>Total Amount:</span>
+                            <span id="totalAmount">KES 0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button id="submitBooking" onclick="submitBooking()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors disabled:opacity-50" disabled>
+                        <i class="fas fa-paper-plane mr-2"></i>Submit Booking Request
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Bookings Tab -->
+        <div id="my-bookings" class="tab-content hidden">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                    <i class="fas fa-history text-blue-600 mr-3"></i>My Bookings
+                </h2>
+                <div id="bookingsList">
+                    <div class="text-center py-8">
+                        <div class="loading show">
+                            <i class="fas fa-spinner fa-spin text-3xl text-gray-400"></i>
+                            <p class="text-gray-500 ml-3">Loading bookings...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invoices Tab -->
+        <div id="invoices" class="tab-content hidden">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">
+                    <i class="fas fa-file-invoice-dollar text-blue-600 mr-3"></i>My Invoices
+                </h2>
+                <div id="invoicesList">
+                    <div class="text-center py-8">
+                        <div class="loading show">
+                            <i class="fas fa-spinner fa-spin text-3xl text-gray-400"></i>
+                            <p class="text-gray-500 ml-3">Loading invoices...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-8 max-w-md mx-4">
+            <div class="text-center">
+                <i class="fas fa-check-circle text-green-500 text-6xl mb-4"></i>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Booking Submitted Successfully!</h3>
+                <p class="text-gray-600 mb-6">Your booking request has been submitted. You will receive an invoice shortly.</p>
+                <button onclick="closeSuccessModal()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

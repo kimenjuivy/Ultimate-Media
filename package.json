@@ -1,0 +1,37 @@
+{
+  "name": "ultimate-media-photography",
+  "version": "1.0.0",
+  "description": "Ultimate Media Photography Booking System",
+  "main": "server-frontend.js",
+  "scripts": {
+    "start": "node server-frontend.js",
+    "dev": "nodemon server-frontend.js",
+    "supabase": "node server-supabase.js"
+  },
+  "keywords": [
+    "photography",
+    "booking",
+    "supabase",
+    "express"
+  ],
+  "author": "Ultimate Media",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.10.1",
+    "pdfkit": "^0.17.1",
+    "puppeteer": "^24.10.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
